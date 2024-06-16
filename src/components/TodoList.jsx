@@ -1,12 +1,15 @@
 import TodoItem from "./TodoItem";
+import { useAppContext } from "../context/useAppContext";
 
 function TodoList(){
+    const { state } = useAppContext();
+
     return (
         <div className="mt-4 flex items-center justify-center flex-col overflow-scroll">
             <div className="w-full overflow-scroll">
             {
-                [1,1,1,1,1,1,1,1,1,11,11,1,1,1,1,1,1,1].map((item) => {
-                    return <TodoItem />
+                state.todolist.map((item,index) => {
+                    return <TodoItem key={`todo-list-item-${item.id}`} item={item} index={index} />
                 })
             }
             </div>

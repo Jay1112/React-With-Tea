@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import { useAppContext } from './context/useAppContext';
 
 function App() {
+  const { commonActions } = useAppContext();
+
+  useEffect(()=>{
+    commonActions.initApp();
+  },[]);
 
   return (
     <div className="bg-gray-200 w-screen h-screen flex flex-col items-center justify-start overflow-x-hidden overflow-y-scroll">
