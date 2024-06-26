@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.debug {
+  border: 1px solid red;
+}
+
+.t-input {
+  @apply border-2 border-gray-400 focus:border-slate-800 outline-none
+}
+
+.t-dark-button {
+  @apply border-2 border-slate-800 text-white bg-slate-800 hover:bg-white hover:text-slate-800 active:bg-slate-800 active:text-white disabled:bg-gray-600 disabled:border-gray-600 disabled:hover:text-white
+}
